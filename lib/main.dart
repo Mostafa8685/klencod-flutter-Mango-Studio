@@ -2400,8 +2400,10 @@ class _MangoHomeShellState extends State<MangoHomeShell> {
                   bytes = await File(picked.path!).readAsBytes();
                 }
                 if (bytes != null && bytes.isNotEmpty) {
-                  setModalState(() => iconBase64 = base64Encode(bytes));
-                }
+  final encodedIcon = base64Encode(bytes);
+  setModalState(() => iconBase64 = encodedIcon);
+}
+
               } catch (_) {}
             }
 
